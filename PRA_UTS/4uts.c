@@ -12,7 +12,7 @@ int main() {
     printf("Masukkan kode buku: ");
     scanf("%d", &kode_buku);
 
-    getchar();
+   
 
     printf("Masukkan judul buku: ");
     fgets(judul_buku, sizeof(judul_buku), stdin);
@@ -20,7 +20,6 @@ int main() {
     printf("Masukkan kategori buku: ");
     scanf("%c", &kategori);
 
-    
     printf("Kode Buku: %d\n", kode_buku);
     printf("Judul Buku: %s",  judul_buku);
     printf("Kategori Buku: %c\n", kategori);
