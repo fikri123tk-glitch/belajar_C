@@ -1,10 +1,12 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 int ID_Server = 0;
 char Nama_Hero[30];
 int Level_awal = 0;
-char job[30] = "";
+char job;
+char nama_job[20] = "";
  
 float power_level = 0.0;
 
@@ -25,19 +27,21 @@ int main() {
     getchar();
 
     printf("Masukkan Job: ");
-    fgets(job, sizeof(job), stdin);
-    printf("Job: %s", job);
+    scanf(" %c", &job);
+    printf("Job: %c", job);
 
-    printf("Power Level: %.2f\n", power_level);
 
     power_level = (Level_awal * 1.5)+ 100.0;
 
-    if (job[0] == 'W' || job[0] == 'w') {
-        strcpy(job, "Warrior");
-    } else if (job[0] == 'M' || job[0] == 'm') {
-        strcpy(job, "Mage");
-    } else if (job[0] == 'A' || job[0] == 'a') {
-        strcpy(job, "Archer");
+    printf("Power Level: %.2f\n", power_level);
+
+
+    if (job == 'W' || job == 'w') {
+        strcpy(nama_job, "Warrior");
+    } else if (job == 'M' || job == 'm') {
+        strcpy(nama_job, "Mage");
+    } else if (job == 'A' || job == 'a') {
+        strcpy(nama_job, "Archer");
     } else {
         power_level += 10.0;
     }
@@ -48,7 +52,7 @@ int main() {
     printf("ID Server: %d\n", ID_Server);
     printf("Nama Hero: %s", Nama_Hero);
     printf("Level Awal: %d\n", Level_awal); 
-    printf("Job: %s", job);
+    printf("Job: %c (%s)\n", job, nama_job);
     printf("Power Level: %.2f\n", power_level);
     printf("===============================\n");
 
